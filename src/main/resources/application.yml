@@ -1,0 +1,22 @@
+server:
+  port: 9050
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/electric?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: chenning666
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 日志记录到指定文件
+logging:
+  file:
+    name: server.log
+  logback:
+    rollingpolicy:
+      # 设置日志文件大小【超出自动创建新的文件】
+      max-file-size: 10MB
+      # 超出的新文件名称
+      file-name-pattern: server.%d{yyyy-MM-dd}.%i.log
+
+
