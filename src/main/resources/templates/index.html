@@ -2,11 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首页</title>
+
+<!--    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>-->
+    <script src="/static/source/vue.js"></script>
+    <link rel="stylesheet" href="/static/source/index.css">
+    <script src="/static/source/index.js"></script>
+    <script src="/static/source/axios.min.js"></script>
+    <script src="/static/source/jquery-3.0.0.min.js"></script>
+    <script src="/static/source/echarts.min.js"></script>
+
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
 </head>
 <body>
 
-  <p>首页</p>
+    <div id="sum" style="width: 700px;height: 500px;background-color: beige;"></div>
+
+    <script type="text/javascript">
+        sum = {
+            title: {
+                text: '9999',
+                subtext: '999',
+                left: 'center',
+                top: 'center'
+            },
+            series: [
+                {
+                    type: 'pie',
+                    data: [
+                        {
+                            value: 40,
+                            name: 'A'
+                        },
+                        {
+                            value: 10,
+                            name: 'B'
+                        },
+                        {
+                            value: 40,
+                            name: 'C'
+                        },
+                        {
+                            value: 10,
+                            name: 'D'
+                        }
+                    ],
+                    radius: ['40%','90%'] // 半径
+                }
+            ]
+        };
+        // 基于准备好的dom，初始化echarts实例
+        var sumChart = echarts.init(document.getElementById('sum'));
+        // 绘制图表
+        sumChart.setOption(sum);
+
+    </script>
 
 </body>
 </html>
